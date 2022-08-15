@@ -134,10 +134,23 @@ class Register : AppCompatActivity() {
         }
     }
     private fun selectImage() {
-        val takePictureIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
-        try {
-            startActivityForResult(takePictureIntent, 1)
-        } catch (e: ActivityNotFoundException) {}
+        val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+
+        if(intent.resolveActivity(packageManager) != null){
+            var photoFile : File? = null
+            try{
+                photoFile = createImageFile()
+            }catch (e : IOException){}
+            if(photoFile != null){
+                val photoUri = FileProvider.getUriForFile(
+                    this,
+                    "com.example.android.provider",
+                    photoFile
+                )
+                intent.putExtra(MediaStore.EXTRA_OUTPUT,photoUri)
+                startActivityForResult(intent, 1)
+            }
+        }
     }
    /*private fun uploadImage(uid:String?=null) {
         val storageReference= FirebaseStorage.getInstance("gs://presence-23cbb.appspot.com").getReference("Profile/$uid")
@@ -158,13 +171,10 @@ class Register : AppCompatActivity() {
             Toast.makeText(this@Register,"$Image",Toast.LENGTH_SHORT).show()
             findViewById<ImageView>(R.id.profile).setImageURI(Image)
         }*/
-        if(requestCode==1 && resultCode== RESULT_OK)
+        if(requestCode==1 && resultCode== Activity.RESULT_OK)
         {
-            if (data != null) {
-                profile.setImageBitmap(data.extras?.get("data") as Bitmap?)
-            }
-        }
-
+            profile.setImageURI(Uri.parse(photoPath))
+            Image = Uri.parse(photoPath)
         }
     }
 
