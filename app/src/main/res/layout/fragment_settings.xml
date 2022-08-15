@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.SettingsFragment">
+
+
+
+
+    <Button
+        android:id="@+id/editAccount"
+        android:layout_width="298dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="88dp"
+        android:backgroundTint="#D3D3D3"
+        android:text="@string/edit_account"
+        android:textSize="20sp"
+        android:drawableLeft="@drawable/ic_face"
+        app:drawableTint="@android:color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+    <Button
+        android:id="@+id/customerCare"
+        android:layout_width="298dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="28dp"
+        android:backgroundTint="#D3D3D3"
+        android:text="@string/customer_care"
+        android:textSize="20sp"
+        android:drawableLeft="@drawable/ic_customer_care"
+        app:drawableTint="@android:color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editAccount" />
+
+    <Button
+        android:id="@+id/darkMode"
+        android:layout_width="298dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="28dp"
+        android:backgroundTint="#D3D3D3"
+        android:text="@string/dark_mode"
+        android:textSize="20sp"
+        android:drawableLeft="@drawable/ic_dark_mode"
+        app:drawableTint="@android:color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/customerCare" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="96dp"
+        android:text="@string/settings"
+        android:textColor="@color/black"
+        android:textSize="40sp"
+        android:shadowColor = "#000"
+        android:shadowDx = "-5"
+        android:shadowDy = "-3"
+        android:shadowRadius = "10"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

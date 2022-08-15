@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="@string/mark_attendance"
+        android:id="@+id/markAttendance1"
+        />
+
+    <item android:title="@string/show_attendance"
+        android:id="@+id/showAttendance"/>
+
+    <item android:title="@string/team_s_attendance"
+        android:id="@+id/teamsAttendance"/>
+
+    <item android:title="@string/add_location"
+        android:id="@+id/addLocation"/>
+    <item android:title="@string/log_out"
+        android:id="@+id/logout"/>
+</menu>
